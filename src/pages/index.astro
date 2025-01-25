@@ -1,11 +1,66 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Heading from '../components/Heading.astro';
+import Link from '../components/Link.astro';
 ---
 
 <Layout>
-  <Welcome />
+  <Heading level="h1" size="4xl">hello there</Heading>
+  <p class="text-muted-foreground">hello</p>
+  <p>
+    <Link href="/">test link</Link>
+  </p>
+  <section class="mt-12">
+    <Heading level="h2" size="2xl">About Me</Heading>
+    <p class="mt-4 text-muted-foreground">
+      I'm a passionate web developer focused on building beautiful, accessible, and performant web applications. With expertise in modern frameworks and best practices, I create solutions that make a difference.
+    </p>
+  </section>
+
+  <section class="mt-12">
+    <Heading level="h2" size="2xl">Featured Projects</Heading>
+    <div class="mt-6 grid gap-6">
+      <div class="rounded-lg border p-6">
+        <Heading level="h3" size="xl">Project One</Heading>
+        <p class="mt-2 text-muted-foreground">A full-stack application built with modern technologies that helps businesses streamline their workflow.</p>
+        <p class="mt-4">
+          <Link href="/work/project-one">View Project →</Link>
+        </p>
+      </div>
+
+      <div class="rounded-lg border p-6">
+        <Heading level="h3" size="xl">Project Two</Heading>
+        <p class="mt-2 text-muted-foreground">An e-commerce platform focusing on performance and user experience.</p>
+        <p class="mt-4">
+          <Link href="/work/project-two">View Project →</Link>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-12">
+    <Heading level="h2" size="2xl">Latest Writing</Heading>
+    <div class="mt-6 space-y-4">
+      <article>
+        <p class="text-sm text-muted-foreground">January 15, 2024</p>
+        <Link href="/writing/post-one">
+          <Heading level="h3" size="lg" class="mt-1">Building Performant Web Applications</Heading>
+        </Link>
+      </article>
+      <article>
+        <p class="text-sm text-muted-foreground">December 30, 2023</p>
+        <Link href="/writing/post-two">
+          <Heading level="h3" size="lg" class="mt-1">The Future of Web Development</Heading>
+        </Link>
+      </article>
+    </div>
+  </section>
+
+  <section class="mt-12">
+    <Heading level="h2" size="2xl">Get in Touch</Heading>
+    <p class="mt-4 text-muted-foreground">
+      Interested in working together? Feel free to reach out through my <Link href="/contact">contact page</Link> or connect with me on 
+      <Link href="https://linkedin.com" externalLink={true}>LinkedIn</Link>.
+    </p>
+  </section>
 </Layout>

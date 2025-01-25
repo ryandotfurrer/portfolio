@@ -13,8 +13,11 @@ const { align = 'left', class: clases, level, size = 'base' } = Astro.props;
 const HeadingTag = level;
 const headingClasses = clsx(
   'font-bold',
-  'text-foreground',
+  'font-serif',
+  'leading-none',
   'text-balance',
+  'text-foreground',
+  'tracking-tight',
   {
     'text-4xl': size === '4xl',
     'text-3xl': size === '3xl',

@@ -1,9 +1,11 @@
 ---
 import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark:dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -11,7 +13,11 @@ import '../styles/global.css';
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
   </head>
-  <body>
-    <slot />
+  <body class="bg-background text-muted-foreground">
+    <div class="mx-auto max-w-2xl px-4 py-8">
+      <Navbar />
+      <slot />
+      <Footer />
+    </div>
   </body>
 </html>
