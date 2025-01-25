@@ -1,0 +1,179 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section2XL from "../layouts/Section2XL.astro";
+import ZestImage from "../assets/images/projects-zest.svg";
+import ZestVideo from "../assets/videos/projects-zest.mp4";
+import GridIronImage from "../assets/images/projects-gridiron.png";
+import ProjectTechTag from "../components/ProjectTechTag.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import GoToTopBtn from "../components/GoToTopBtn.astro";
+
+const title = "Now";
+const description = "What I'm up to in the current moment.";
+---
+
+<Layout title={title} description={description}>
+  <main
+    class="flow animate-fade-down animate-delay-[400ms] animate-duration-700 animate-once animate-ease-in-out"
+  >
+    <section class="mx-auto max-w-prose">
+      <h2 class="text-xl text-zinc-600 dark:text-zinc-300">Last Update:</h2>
+      <h2 class="mt-0 leading-snug">May 6, 2024</h2>
+      <section id="whats-new" class="flow">
+        <h3 class="w-fit rounded bg-amber-400 p-1 text-zinc-900">Whats new</h3>
+        <article class="flow">
+          <h4>MVP Launched!</h4>
+          <p>
+            In April I joined a cohort organized by the <a
+              href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn:li:organization:101718560&keywords=dallas%20software%20developers%20group&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=3c7a91eb-8611-4f9a-82bc-22457cb44b44&sid=XF_&spellCorrectionEnabled=true"
+              target="_blank"
+              rel="noopener noreferrer">Dallas Software Developers</a
+            > (DSD) group in which we had 6 weeks to get an MVP out the door.
+          </p>
+          <div class="mx-auto md:w-2/3">
+            <ProjectCard
+              imagePath={ZestImage}
+              imageAlt="Zest logo"
+              projectName="Zest"
+              projectDescription="Zest is an app that provides recipes and prioritizes meals you can cook with ingredients on hand, meals that are within your capacity and skill level to prepare, and gives you the macros for each of those meals."
+              labelPrimary="View Video"
+              labelSecondary="View GitHub"
+              projectLiveLink={ZestVideo}
+              projectGithubLink="https://github.com/CloudyBae/dsd-grocery"
+            >
+              <ProjectTechTag technologyName="React Native" />
+              <ProjectTechTag technologyName="Expo" />
+              <ProjectTechTag technologyName="Jest" />
+              <ProjectTechTag technologyName="Django" />
+              <ProjectTechTag technologyName="Python" />
+              <ProjectTechTag technologyName="PostgreSQL" />
+              <ProjectTechTag technologyName="APIs" />
+              <ProjectTechTag technologyName="Design" />
+            </ProjectCard>
+          </div>
+        </article>
+        <article class="flow">
+          <h4>Another MVP Launched!</h4>
+          <p>
+            At the end of April, one week after the DSD MVP, Gridiron Survivor
+            launched our MVP! <a
+              href="https://www.youtube.com/watch?v=i-tRyg8Lqaw&t=1s"
+              target="_blank"
+              rel="noopener noreferrer">Watch the release video</a
+            > on YouTube. We had to cut some features out to present it on time,
+            but Phase II has begun and I am ready to make it better than ever.
+          </p>
+          <p>
+            I am excited to announce that I am working on a couple of projects
+            with some incredible people I met at <a href="/blog/that-conference"
+              >THAT Conference</a
+            > - <a
+              href="https://twitter.com/shashiwhocodes"
+              target="_blank"
+              rel="noopener noreferrer">Shashi Lo</a
+            > and <a
+              href="https://twitter.com/jamesqquick"
+              target="_blank"
+              rel="noopener noreferrer">James Q. Quick</a
+            >!
+          </p>
+          <div class="mx-auto md:w-2/3">
+            <ProjectCard
+              imagePath={GridIronImage}
+              imageAlt="Gridiron Survivor Badge Logo"
+              projectName="Gridiron Survivor"
+              projectDescription="Gridiron Survivor is an app that allows users to compete in an NFL Survivor pool by picking one winning team each week without repeating a team, with the last remaining participant declared the winner."
+              labelPrimary="View Project"
+              labelSecondary="View GitHub"
+              projectGithubLink="https://github.com/LetsGetTechnical/gridiron-survivor"
+              projectLiveLink="https://www.gridironsurvivor.com/"
+            >
+              <ProjectTechTag technologyName="NextJS" />
+              <ProjectTechTag technologyName="Appwrite" />
+              <ProjectTechTag technologyName="Tailwind" />
+              <ProjectTechTag technologyName="shadcn/ui" />
+              <ProjectTechTag technologyName="Storybook" />
+              <ProjectTechTag technologyName="React Testing Library" />
+              <ProjectTechTag technologyName="Jest" />
+            </ProjectCard>
+          </div>
+        </article>
+        <h3>What I do for work</h3>
+        <p>
+          I'm transitioning careers as a Buyer in Procurement to Web Development
+          and have been studying it with a focus on front-end. Currently I am
+          continuing on expanding my skills with React/NextJS, APIs, and am
+          learing Node.js followed by SQL via <a
+            href="https://github.com/ryandotfurrer"
+            target="_blank"
+            rel="noopener noreferrer">several projects</a
+          > as well as focusing on building my community on <a
+            href="https://twitter.com/ryandotfurrer"
+            target="_blank"
+            rel="noopener noreferrer"
+            >X,
+          </a><a
+            href="https://www.linkedin.com/in/ryanfurrer/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn,
+          </a> and <a
+            href="https://www.twitch.tv/ryandotfurrer"
+            target="_blank"
+            rel="noopener noreferrer">Twitch</a
+          >.
+        </p>
+        <h3>What I do for fun</h3>
+        <p>
+          Outisde of the work office, you'll often find me at my home office
+          coding or playing video games. My current backlog includes but is
+          certainly <i>not</i> limited to:
+        </p>
+        <ul class="ml-8 list-disc">
+          <li>
+            <a
+              href="https://na.finalfantasyxvi.com/"
+              target="_blank"
+              rel="noopener noreferrer">Final Fantasy XVI</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://seaofstarsgame.co/"
+              target="_blank"
+              rel="noopener noreferrer">Sea of Stars</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://www.owlboygame.com/"
+              target="_blank"
+              rel="noopener noreferrer">Owl Boy</a
+            >
+          </li>
+        </ul>
+        <p>
+          I'm also an avid motorsport fan in general, especially Formula 1; This
+          year I'm rooting for McLaren and Williams! I also co-host a <a
+            href="https://www.twitch.tv/aimsleague/about"
+            target="_blank"
+            rel="noopener noreferrer">Gran Turimo 7 stream</a
+          > with my brother where we commentate on races most Sundays.
+        </p>
+        <p>
+          <h3>Conferences I've attended</h3>
+          <ul class="ml-8 list-disc">
+            <li>THAT Conference, Austin, TX 2024</li>
+          </ul>
+        </p>
+        <p class="text-sm">
+          <a
+            href="https://nownownow.com/about"
+            target="_blank"
+            rel="noopener noreferrer">Unsure what a "Now" page is?</a
+          >
+        </p>
+      </section>
+    </section>
+  </main>
+</Layout>

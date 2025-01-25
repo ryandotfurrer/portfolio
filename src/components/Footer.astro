@@ -1,0 +1,70 @@
+---
+import FooterNavBar from "./FooterNavBar.astro";
+import SocialLinks from "./SocialLinks.astro";
+---
+
+<footer
+  class="flow container mx-auto mt-24 w-full max-w-screen-xl border-t-2 border-zinc-200 pt-24 dark:border-zinc-800"
+>
+  <div class="flow mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div>
+      <FooterNavBar />
+    </div>
+    <div class="flow">
+      <h2 class="text-lg">About</h2>
+      <p class="text-balance">
+        A Frontend Web Developer with a focus on UX, accessibility, and an eye
+        for design.
+      </p>
+      <div class="flow">
+        <div class="flow">
+          <h2 class="text-lg">Follow me</h2>
+          <SocialLinks />
+        </div>
+      </div>
+    </div>
+    <div
+      class="flow rounded-lg bg-amber-400 p-8 text-zinc-900 md:col-span-2 lg:col-span-1"
+    >
+      <h2 class="text-lg text-zinc-900">Open for work</h2>
+      <p class="text-pretty">
+        If you are looking for a Frontend Web Developer, I'd love to hear about
+        the position! Please <a
+          href="/contact"
+          class="font-semibold text-zinc-900 hover:text-zinc-900 hover:underline"
+          >Contact me</a
+        > if you or someone you know is hiring junior developers!
+      </p>
+    </div>
+  </div>
+  <div id="copyright" class="py-8">
+    <p class="text-sm text-zinc-900 dark:text-zinc-50">
+      &copy; <span id="footer-year"></span>
+      <a
+        href="https://ryanfurrer.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-zinc-900 dark:text-zinc-50"
+      >
+        Ryan Furrer</a
+      >
+    </p>
+  </div>
+</footer>
+
+<script>
+  function getCurrentYear() {
+    // Grab span element containing year in footer
+    let footerYear = document.querySelector("#footer-year");
+    // Gets current date
+    const date = new Date();
+    // Gets current year from date and converts it to a string
+    const year = date.getFullYear().toString();
+    // Changes year in footer
+    if (footerYear) {
+      footerYear.innerHTML = year;
+    }
+  }
+
+  getCurrentYear();
+</script>

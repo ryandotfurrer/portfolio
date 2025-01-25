@@ -1,0 +1,251 @@
+---
+import { Image } from "astro:assets";
+import profilePictureMay2024 from "../assets/images/profile-picture.png";
+import profilePictureMemoji from "../assets/images/avatar-1x.webp";
+import musicPicture from "../assets/images/about-music.webp";
+import procurementPicture from "../assets/images/about-procurement.webp";
+import webdevPicture from "../assets/images/about-web-dev.webp";
+import "../styles/newglobal.css";
+import resume from "../assets/files/ryan-furrer-resume.pdf";
+import Layout from "../layouts/Layout.astro";
+const title = "About Me";
+const description = "Here is where you can learn a bit more about me.";
+---
+
+<Layout title={title} description={description}>
+  <main
+    class="flow animate-fade-down animate-delay-[400ms] animate-duration-700 animate-once animate-ease-in-out"
+  >
+    <article class="flow mx-auto max-w-prose">
+      <section
+        class="flow mx-auto grid grid-cols-1 md:place-items-center lg:grid-cols-2 lg:gap-8"
+      >
+        <Image
+          src={profilePictureMay2024}
+          alt=`Image of Ryan Furrer on a dark teal to light teal gradient background.`
+          class={"aspect-square object-top object-cover"}
+        />
+
+        <div id="greeting-container-verbiage-container" class="flow">
+          <p>
+            My name is Ryan Furrer, and I am a Frontend Web Developer, <a
+              href="https://www.twitch.tv/ryandotfurrer"
+              target="_blank"
+              rel="noopener noreferrer">streamer</a
+            >, and <a href="/blog">blogger</a> with a focus on UX development, accessibility,
+            and an eye for design.
+          </p>
+          <p>
+            Proficient in JavaScript, TypeScript, React, NextJS, Astro, Tailwind
+            CSS, and more, I bring transferable skills in project management,
+            problem-solving, and much more.
+          </p>
+          <p class="text-lg font-semibold">
+            <a
+              class="flex flex-row place-items-center gap-4 text-amber-600 no-underline transition-[gap] duration-300 ease-in-out hover:gap-8 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300"
+              href=`${resume}`
+              >View my resume <i class="fa-solid fa-arrow-right"></i></a
+            >
+          </p>
+        </div>
+      </section>
+      <section class="flow">
+        <h2>Personal Background</h2>
+        <p>
+          First, thank you for visiting my site; I appreciate your interest in
+          me and my work! I currently reside in Islip, NY, USAand was born and
+          raised on Long Island, NY. Moving into the tech industry will be my
+          third, and hopefully final, career transition. Previously, I was a
+          musician and music educator, and I am currently a Buyer and
+          Sub-Contracts Administrator in Supply Chain.
+        </p>
+        <p>
+          I attended three different schools for four and a half years, majoring
+          in Music Education and Music Performance before leaving without a
+          degree. The last school I was at wanted another four years out of me,
+          and I saw the pile of student loan debt continuing to grow, so I
+          decided to drop out; more on that later.
+        </p>
+        <p>
+          I have built websites and small projects mainly for myself; however, I
+          have also built websites for a couple of clients. The only one still
+          in business is <a
+            href="https://gregorykwilliamsviolist.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Gregory K. Williams</a
+          >, a violist and violinist whom I studied under in my former life as a
+          musician.
+        </p>
+      </section>
+      <section class="flow py-6 md:py-11">
+        <h2>My Journey</h2>
+        <h3>Music</h3>
+        <Image src={musicPicture} alt="Row of string instruments." />
+        <p>
+          As previously mentioned, my first career, passion, and love was, and
+          forever will be, music. I started playing viola when I was eight years
+          old and simply stuck with it as I had natural talent; what kid doesn't
+          like doing something because they are good at it? However, it did not
+          take more than two or three years to realize I wanted to do something
+          with music for the rest of my life.
+        </p>
+        <p>
+          At age fifteen, I began performing professionally at local musical
+          theatres and weddings around Long Island. I would continue to do so
+          until around thirty years old when my scope increased from only Long
+          Island to the tri-state area (New York, New Jersey, and Connecticut).
+        </p>
+        <p>
+          When I dropped out of college in 2013, I went on to manage a couple of
+          local music stores while continuing to perform professionally and
+          teach private music lessons. However, there came a time when I
+          realized that I was not making enough money and needed to change
+          courses. That is when I transitioned into Procurement.
+        </p>
+        <h3>Procurement</h3>
+        <Image
+          src={procurementPicture}
+          alt="Rows of cubicles in a corporate office building."
+        />
+        <p>
+          On March 16, 2020 - the same day most of the world shut down from
+          COVID-19, I started my first job as a Buyer at a government
+          contractor. This was a completely new industry for me; I never heard
+          of people buying items for a company for a living before! Due to the
+          pandemic, I had to learn this new job remotely, which was new for me
+          and the company. I did well, and within 1.5 years, I got a small
+          promotion.
+        </p>
+        <p>
+          While this felt great, this career was not for me for the long haul; I
+          was not passionate about it and wanted change. I was at “Company A”
+          from March 2020 - March 2022, where I went to another government
+          contractor as a Buyer. I was only there from March 22 - January 2023
+          for various reasons, mainly due to an incredibly unrealistic and
+          unmanageable workload that was wreaking havoc on my mental health.
+        </p>
+        <p>
+          That leads us to where I am today: back at “Company A.” Returning to
+          this company, I received another small promotion from Buyer to
+          Sub-Contracts Administrator. I have had a lot of growth in this field
+          since 2020. however, I still can't help but feel like it is not for me
+          in the long run.
+        </p>
+        <h3>Web Development</h3>
+        <Image src={webdevPicture} alt=`14" MacBook Pro in Space Black` />
+        <p>
+          It was late 2019 when I decided to start studying programming for a
+          career change; however, even that decision wasn't without its twists
+          and turns. I started studying Front-End Web Development, then learning
+          to be an AWS Solutions Architect, and then studying to take the
+          CompTIA A+ exam for a career in IT before circling back to Front-End
+          Web Development.
+        </p>
+        <p>Why did I choose Front-End Web Development?I just love it!</p>
+        <p>
+          It allows me to flex the creative muscles of my brain with design
+          choices while letting me program - something I've always been
+          interested in.
+        </p>
+        <p>
+          My learning path has been through its ups and downs as well. Being
+          self-taught, I had only myself to depend on, and that lack of
+          structure sometimes hindered me. Learning on my own was completely new
+          to me; whether it was a lack of discipline, running on motivation
+          until it ran out, life getting in the way, or my indecisiveness on
+          what to focus on and how to learn it, my progress learning has ebbed
+          and flowed in the last few years. This was by no means a result of a
+          lack of passion or interest, but just being overwhelmed at times.
+        </p>
+      </section>
+      <section class="flow py-6 md:py-11">
+        <h2>My Goals, Mission, and Values</h2>
+        <h3>My Current Goal</h3>
+        <p>
+          Obtain a job as a Front-End Web Developer. I want to be happy in my
+          career again and stick with it for life.
+        </p>
+        <h3>My End Goal</h3>
+        <p>
+          Become a Full-Stack Engineer. I look forward to learning back-end
+          technologies to expand my projects, build at least one successful
+          SaaS, and provide more value to clients and companies.
+        </p>
+        <h3>My Mission</h3>
+        <p>
+          To help people and companies build the web presence they deserve
+          through quality websites, apps, and services.
+        </p>
+        <h3>My Values</h3>
+        <h4>Inclusivity</h4>
+        <p>
+          Everyone deserves the same treatment, circumstances, and allowances.
+          Inclusivity in websites means ensuring accessibility is a primary
+          focus rather than an afterthought.
+        </p>
+        <h4>Educating Others</h4>
+        <p>
+          This harkens back to my days as a music teacher. However, to truly
+          understand a concept and claim how to do something, you must be able
+          to teach it. Not only that, I want to give back to the Web Development
+          community that has given so much to me; one way to do that is by
+          sharing my knowledge
+        </p>
+        <h4>Collaboration</h4>
+        <p>
+          While I often like working on my own, there is no denying that you can
+          achieve much more by working with others. Whether it's bouncing ideas
+          off friends in a Discord server, reaching out to the X (formerly
+          Twitter) world, or attending local Meetups, I believe we can all
+          progress faster by working together.
+        </p>
+        <h4>Kindness</h4>
+        <p>
+          I was raised by a few golden rules, and one of those was “Treat others
+          how you want to be treated.” I try to live by this every single day.
+        </p>
+        <h4>Bringing Others Up</h4>
+        <p>
+          I believe in bringing others up rather than putting them down. That
+          means being there for friends and family, helping people in need,
+          encouraging them to continue their journey, and much more. There is so
+          much negativity in this world, and if I can try to lessen that in any
+          person's life, then I can rest easy.
+        </p>
+      </section>
+      <section class="flow py-6 md:py-11">
+        <h2>Conclusion</h2>
+        <div
+          class="mx-auto grid grid-cols-1 md:grid-cols-2 md:place-items-center md:gap-8"
+        >
+          <Image
+            class="mb-[1em] md:mb-0"
+            src={profilePictureMemoji}
+            alt="Ryan Furrer"
+          />
+          <div>
+            <p class="mb-[1em]" '>
+              If you read all that, I appreciate you, and even if you didn't, I
+              still appreciate you for stopping by!
+            </p>
+            <p>
+              If you'd like to chat, I'd love to hear from you. You can <a
+                href="mailto:ryandotfurrer@gmail.com">email me</a
+              >, reach out to me on <a
+                href="https://twitter.com/ryandotfurrer"
+                target="_blank"
+                rel="noopener noreferrer">X (formerly Twitter)</a
+              >, or set up a time to chat via <a
+                href="https://cal.com/ryandotfurrer"
+                target="_blank"
+                rel="noopener noreferrer">Cal</a
+              >.
+            </p>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+</Layout>

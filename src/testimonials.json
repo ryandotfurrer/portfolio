@@ -1,0 +1,11 @@
+{
+  "testimonials": [
+    {
+      "author": "James Q Quick",
+      "avatarURL": "https://avatars.githubusercontent.com/u/5391915?v=4",
+      "githubHandle": "jamesqquick",
+      "githubURL": "https://github.com/jamesqquick",
+      "testimonial": "Through working with Ryan on an Open Source project called Deals for Devs, he has shown a true passion for learning as a full-stack developer. He is eager to ask questions and take on challenges that push him to develop his skill-set and understanding. I think, given an opportunity, Ryan will make an incredible addition to a dev team."
+    }
+  ]
+}

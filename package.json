@@ -1,0 +1,41 @@
+{
+  "name": "rf-astro-portfolio-and-blog",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "dev:network": "astro dev --network",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/netlify": "^5.5.4",
+    "@astrojs/react": "^3.6.3",
+    "@astrojs/tailwind": "^5.1.2",
+    "@storyblok/astro": "^4.1.1",
+    "@storyblok/js": "^3.1.9",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "astro": "^4.16.14",
+    "astro-devtool-breakpoints": "^0.3.0",
+    "astro-icon": "^1.1.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.33.5",
+    "typescript": "^5.7.2",
+    "vite": "^4.5.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.15",
+    "@vitejs/plugin-basic-ssl": "^1.1.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.12.3",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "tailwindcss": "^3.4.15",
+    "tailwindcss-animated": "^1.1.2"
+  }
+}

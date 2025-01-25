@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import { storyblokEditable, renderRichText } from "@storyblok/astro";
+const { blok } = Astro.props;
+const content = renderRichText(blok.content);
+
+const date = new Date(blok.publishedDate).toLocaleDateString("en-US", {
+  dateStyle: "full",
+});
+---
+
+<section>
+  <article {...storyblokEditable(blok)} id="blog-post" class="max-w-prose">
+    <h1 id="blog-title">{blok.title}</h1>
+    <p id="blog-publish-date" class="text-sm">{date}</p>
+    <p>{blok.description}</p>
+    <Image
+      id="blog-featured-image"
+      src={blok.featuredImage.filename}
+      alt={blok.featuredImage.alt}
+      width={1536}
+      height={1536}
+    />
+    <Fragment set:html={content} />
+  </article>
+</section>

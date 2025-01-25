@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SocialLinks from "../components/SocialLinks.astro";
+
+const title = "404: Page Not Found";
+const description =
+  "It seems the page you tried visiting does not exist, or you've found a broken link. But while you're here...";
+---
+
+<Layout title={title} description={description}>
+  <main
+    class="flow animate-fade-down animate-delay-[400] animate-duration-700 animate-once animate-ease-in"
+  >
+    <section class="flow mx-auto max-w-screen-lg">
+      <p>Can I interest you in some of my blogs?</p>
+      <p>
+        <div class="flex flex-col">
+          <p>
+            ✅ <a href="/blog">Yes I'd love to read some</a>
+          </p>
+          <p>❌ <a href="/">No, take me home</a></p>
+        </div>
+      </p>
+      <div class="flow">
+        <p>Or maybe you'd like to follow me elsewhere?</p>
+        <SocialLinks />
+      </div>
+    </section>
+  </main>
+</Layout>

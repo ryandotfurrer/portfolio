@@ -1,0 +1,22 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+}
+const { title, description }: Props = Astro.props;
+---
+
+<section class="xl:py-42 py-16 md:py-24 lg:py-32">
+  <div class="flow mx-auto grid h-auto max-w-screen-lg place-content-center">
+    <h1
+      class="animate-fade text-3xl animate-delay-0 animate-duration-300 animate-once animate-ease-in-out lg:text-4xl 2xl:text-5xl"
+    >
+      {title}
+    </h1>
+    <p
+      class="animate-fade-down text-pretty text-xl font-semibold leading-none text-emerald-600 animate-delay-150 animate-duration-500 animate-once animate-ease-in-out lg:text-2xl 2xl:text-3xl dark:text-emerald-400"
+    >
+      {description}
+    </p>
+  </div>
+</section>

@@ -1,0 +1,46 @@
+---
+import Image from "astro/components/Image.astro";
+import testimonials from "../testimonials.json";
+
+export interface ITestimonials {
+  author: string;
+  avatarURL: string;
+  githubHandle: string;
+  testimonial: string;
+}
+
+const testimonialArray: ITestimonials[] = testimonials.testimonials;
+---
+
+<section class="grid gap-8">
+  <h2 class="text-center">What others have to say</h2>
+  <div class="mx-auto grid max-w-screen-sm grid-cols-1">
+    {
+      testimonialArray.map((testimonial: ITestimonials) => (
+        <div class="grid gap-4 rounded-lg p-4 outline outline-zinc-200 dark:outline-zinc-900">
+          <p>"{testimonial.testimonial}"</p>
+          <div class="flex gap-4">
+            <Image
+              src={testimonial.avatarURL}
+              alt={`${testimonial.author}'s avatar`}
+              class="h-12 w-12 rounded-full"
+              width="1"
+              height="1"
+            />
+            <div>
+              <p class="text-zinc-950 dark:text-zinc-50">
+                {testimonial.author}
+              </p>
+              <a
+                href={`https://github.com/${testimonial.githubHandle}`}
+                class="text-sm"
+              >
+                @{testimonial.githubHandle}
+              </a>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

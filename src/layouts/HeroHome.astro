@@ -1,0 +1,30 @@
+---
+import LinkButtonPrimary from "../components/LinkButtonPrimary.astro";
+import LinkButtonSecondary from "../components/LinkButtonSecondary.astro";
+
+export interface Props {
+  heroHeader: string;
+}
+
+const { heroHeader }: Props = Astro.props;
+---
+
+<section class="xl:py-42 py-16 md:py-24 lg:py-32">
+  <div class="flow mx-auto grid h-auto max-w-screen-lg place-content-center">
+    <h1
+      class="animate-fade text-3xl animate-delay-0 animate-duration-300 animate-once animate-ease-in-out lg:text-4xl 2xl:text-5xl"
+    >
+      {heroHeader}
+    </h1>
+    <div
+      class="grid animate-fade-down gap-4 pt-12 text-base font-semibold animate-delay-200 animate-duration-500 animate-once animate-ease-in-out md:max-w-fit md:grid-cols-2 md:gap-8 lg:text-lg"
+    >
+      <LinkButtonPrimary linkURL="/projects" label="View my projects">
+        <i slot="pre-icon" class="fa-solid fa-code-branch"></i>
+      </LinkButtonPrimary>
+      <LinkButtonSecondary linkURL="/blog" label="Read my articles">
+        <i slot="pre-icon" class="fa-solid fa-newspaper"></i>
+      </LinkButtonSecondary>
+    </div>
+  </div>
+</section>

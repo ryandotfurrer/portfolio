@@ -1,0 +1,91 @@
+---
+import { useStoryblokApi } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import HeaderNavBar from "../../components/HeaderNavBar.astro";
+import Footer from "../../components/Footer.astro";
+import "../../styles/global.css";
+import "../../styles/highlightjs-styles/github-dark-dimmed.min.css";
+
+export const prerender = true;
+export async function getStaticPaths() {
+  const sbApi = useStoryblokApi();
+
+  const { data } = await sbApi.get("cdn/stories", {
+    content_type: "blogPost",
+    version: import.meta.env.DEV ? "draft" : "published",
+  });
+
+  const stories = Object.values(data.stories);
+
+  return stories.map((story: any) => {
+    return {
+      params: { slug: story.slug },
+    };
+  });
+}
+
+const sbApi = useStoryblokApi();
+const { slug } = Astro.params;
+const { data } = await sbApi.get(`cdn/stories/${slug}`, {
+  version: import.meta.env.DEV ? "draft" : "published",
+});
+
+const story = data.story;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Ryan Furrer" />
+    <meta
+      name="description"
+      content="Ryan Furrer, a Frontend Web Developer, streamer, and blogger with a focus on UX development, accessibility, and an eye for design. Proficient in JavaScript, TypeScript, React, NextJS, Astro, Tailwind CSS, and more, I bring transferable skills in project management, problem-solving, and more."
+    />
+
+    <meta property="og:title" content={story.name} />
+    <meta property="og:description" content={story.content.description} />
+    <meta property="og:image" content={story.content.featuredImage.filename} />
+    <meta name="og:image:alt" content={story.content.featuredImage.alt} />
+    <meta property="og:site_name" content="Ryan Furrer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content={story.content.featuredImage.filename} />
+    <meta name="twitter:image:alt" content={story.content.featuredImage.alt} />
+    <meta
+      property="og:url"
+      content={`https://rfportfolioastro.netlify.app/blog/${story.full_slug}`}
+    />
+
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={`https://ryanfurrer.com/blog`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      is:inline
+      src="https://kit.fontawesome.com/dec2579292.js"
+      crossorigin="anonymous"></script>
+    <script is:inline src="/highlight.min.js"></script>
+  </head>
+  <body class="flow container mx-auto px-4 2xl:px-0">
+    <div class="flow container mx-auto max-w-screen-2xl">
+      <header>
+        <HeaderNavBar />
+      </header>
+    </div>
+
+    <main
+      class="flow xl:py-15 animate-fade-down py-4 animate-delay-0 animate-duration-300 animate-once animate-ease-in-out md:py-8 lg:py-12"
+    >
+      <StoryblokComponent blok={story.content} />
+    </main>
+    <Footer />
+    <script is:inline>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

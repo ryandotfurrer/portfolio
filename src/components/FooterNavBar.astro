@@ -1,0 +1,68 @@
+---
+import resume from "../assets/files/ryan-furrer-resume.pdf";
+import { Icon } from "astro-icon/components";
+---
+
+<style>
+  a {
+    @apply text-zinc-500 hover:text-emerald-600 dark:text-zinc-400 dark:hover:text-emerald-400;
+  }
+</style>
+
+<nav class="flow container mx-auto" aria-label="footer navigation bar">
+  <h2 class="text-lg">Sitemap</h2>
+  <ul class="grid">
+    <li>
+      <a
+        class="flex items-center gap-1"
+        href=`${resume}`
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="resume"
+        >Resume<Icon class="m-0 p-0 text-xl" name="newtab" /></a
+      >
+    </li>
+    <li>
+      <a href="/" aria-label="home">Home</a>
+    </li>
+    <li>
+      <a href="/projects" aria-label="projects">Projects</a>
+    </li>
+    <li>
+      <a href="/blog" aria-label="blog">Blog</a>
+    </li>
+    <li>
+      <a href="/now" aria-label="now">Now</a>
+    </li>
+    <li>
+      <a href="/uses" aria-label="uses">Uses</a>
+    </li>
+    <li>
+      <a href="/about" aria-label="about">About</a>
+    </li>
+    <li>
+      <a href="/contact" aria-label="contact">Contact</a>
+    </li>
+    <li>
+      <a
+        class="flex items-center gap-1"
+        href="https://cal.com/ryandotfurrer"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="navlink text-zinc-500 hover:text-emerald-600 dark:hover:text-emerald-400"
+        aria-label="chat with ryan"
+        >Chat with Ryan<Icon class="m-0 p-0 text-xl" name="newtab" /></a
+      >
+    </li>
+    <li>
+      <a
+        class="flex items-center gap-1"
+        href="https://ryanfurrer.beehiiv.com/subscribe"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="newsletter"
+        >Newsletter<Icon class="m-0 p-0 text-xl" name="newtab" /></a
+      >
+    </li>
+  </ul>
+</nav>

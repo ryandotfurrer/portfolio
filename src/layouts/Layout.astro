@@ -1,0 +1,66 @@
+---
+import "../styles/newglobal.css";
+import HeaderNavBar from "../components/HeaderNavBar.astro";
+import Footer from "../components/Footer.astro";
+import NewHero from "./NewHero.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Ryan Furrer" />
+    <meta
+      name="description"
+      content="Ryan Furrer, a Frontend Web Developer, streamer, and blogger with a focus on UX development, accessibility, and an eye for design. Proficient in JavaScript, TypeScript, React, NextJS, Astro, Tailwind CSS, and more, I bring transferable skills in project management, problem-solving, and much more."
+    />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta
+      property="og:image"
+      content="https://a-us.storyblok.com/f/1016568/1200x630/f5c66c3b30/og-image.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Ryan Furrer, a Frontend Web Developer, streamer, and blogger"
+    />
+    <meta property="og:site_name" content="Ryan Furrer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image:alt"
+      content="Ryan Furrer, a Frontend Web Developer, streamer, and blogger"
+    />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      is:inline
+      src="https://kit.fontawesome.com/dec2579292.js"
+      crossorigin="anonymous"></script>
+  </head>
+  <body class="flow container mx-auto px-4 2xl:px-0">
+    <div class="flow container mx-auto max-w-screen-2xl">
+      <header id="top">
+        <HeaderNavBar />
+        <NewHero title={title} description={description} />
+      </header>
+      <slot />
+    </div>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,50 @@
+---
+import ProjectCardLinks from "./ProjectCardLinks.astro";
+import { Image } from "astro:assets";
+
+export interface Props {
+  imagePath: any;
+  imageAlt: string;
+  projectName: string;
+  projectDescription: string;
+  projectLiveLink?: any;
+  projectGithubLink?: any;
+  labelPrimary: string;
+  labelSecondary: string;
+}
+
+const {
+  imagePath,
+  imageAlt,
+  projectDescription,
+  projectName,
+  projectLiveLink,
+  projectGithubLink,
+  labelPrimary,
+  labelSecondary,
+}: Props = Astro.props;
+---
+
+<article>
+  <div
+    class="flow h-full overflow-hidden rounded-md bg-zinc-200 outline outline-zinc-300 dark:bg-zinc-800 dark:outline-none"
+  >
+    <Image src={imagePath} alt={imageAlt} class={`rounded-b-none`} />
+    <div class="flow p-4 lg:p-8">
+      <ul class="flex flex-wrap gap-2">
+        <slot />
+      </ul>
+      <h3 class="text-xl">{projectName}</h3>
+      <p>{projectDescription}</p>
+      <slot name="extra-description" />
+      <div class="flex flex-col gap-4 md:flex-row">
+        <ProjectCardLinks
+          projectLiveLink={projectLiveLink}
+          projectGithubLink={projectGithubLink}
+          labelPrimary={labelPrimary}
+          labelSecondary={labelSecondary}
+        />
+      </div>
+    </div>
+  </div>
+</article>

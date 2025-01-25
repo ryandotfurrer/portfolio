@@ -1,0 +1,99 @@
+---
+import LayoutNoHero from "../layouts/LayoutNoHero.astro";
+import LinkButtonPrimary from "../components/LinkButtonPrimary.astro";
+import Section2XL from "../layouts/Section2XL.astro";
+import SocialLinks from "../components/SocialLinks.astro";
+const description = "Want to chat, email, or connect?";
+const title = "Contact Ryan";
+---
+
+<LayoutNoHero title={title} description={description}>
+  <main
+    class="flow animate-fade animate-delay-0 animate-duration-300 animate-once animate-ease-in-out"
+  >
+    <Section2XL>
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <div class="flow">
+          <h1>Contact Me</h1>
+          <p>
+            I'd love to hear from you no matter what. <span
+              class="rounded-sm bg-amber-400 p-1 text-zinc-900"
+              >I am open to employment opportunities</span
+            >, collaborative projects, and more! I am exicited to meet new
+            people in the space and grow as a developer.
+          </p>
+          <h2>Chat with me</h2>
+          <p>
+            If you want to chat "face to face," please set up a time to chat via
+
+            <a
+              href="https://cal.com/ryandotfurrer"
+              target="_blank"
+              rel="noopener noreferrer">Cal.com</a
+            >.
+          </p>
+          <LinkButtonPrimary
+            target
+            label="Chat with Ryan"
+            linkURL="https://cal.com/ryandotfurrer"
+          />
+          <h2>Connect with me</h2>
+          <p>Feel free to connect with me on any of the platforms below!</p>
+          <SocialLinks />
+        </div>
+        <div class="flow grid gap-4">
+          <h2>Email me</h2>
+          <p>
+            Email more your thing? Don't worry, that's good for me too. Just
+            fill out the form below, click send, and your digital letter will be
+            sent in no time.
+          </p>
+          <div id="contact-form-container">
+            <form
+              data-netlify="true"
+              name="contact-form"
+              class="grid grid-cols-1 space-y-[1em]"
+            >
+              <div id="name-input-container" class="input-container">
+                <label for="name"
+                  >Name<input
+                    type="text"
+                    name="name"
+                    id="name"
+                    required
+                    autocomplete="name"
+                  /></label
+                >
+              </div>
+              <div id="email-input-container" class="input-container">
+                <label for="email"
+                  >Email<input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    autocomplete="email"
+                  /></label
+                >
+              </div>
+              <div id="message-input-container" class="input-container">
+                <label for="message"
+                  >Message<textarea
+                    name="message"
+                    id="message"
+                    required
+                    autocorrect="on"></textarea></label
+                >
+              </div>
+              <button
+                type="submit"
+                class="dark:hover-text-zinc-900 group flex w-full items-center justify-center gap-4 rounded bg-emerald-600 px-6 py-3 text-zinc-50 no-underline transition-transform duration-300 ease-in-out hover:text-zinc-50 md:hover:scale-105 lg:max-w-fit dark:bg-emerald-400 dark:text-zinc-900 hover:dark:text-zinc-900"
+                >Send Email</button
+              >
+            </form>
+          </div>
+        </div>
+      </div>
+    </Section2XL>
+  </main>
+</LayoutNoHero>

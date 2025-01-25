@@ -1,0 +1,39 @@
+---
+export interface Props {
+  projectName: string;
+  projectDescription?: string;
+  projectLiveLink: string;
+  projectGithubLink: string;
+}
+
+const {
+  projectDescription,
+  projectName,
+  projectLiveLink,
+  projectGithubLink,
+}: Props = Astro.props;
+---
+
+<article class="flow rounded-md bg-zinc-100 p-6 dark:bg-zinc-900">
+  <h3 class="text-xl">{projectName}</h3>
+  <p class="text-base">{projectDescription}</p>
+  <div>
+    <ul class="flex flex-wrap gap-2">
+      <slot />
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li>
+        <a href={projectLiveLink} target="_blank" rel="noopener noreferrer"
+          >Live Site</a
+        >
+      </li>
+      <li>
+        <a href={projectGithubLink} target="_blank" rel="noopener noreferrer"
+          >GitHub</a
+        >
+      </li>
+    </ul>
+  </div>
+</article>
