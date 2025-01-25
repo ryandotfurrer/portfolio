@@ -1,0 +1,16 @@
+---
+import Link from './Link.astro';
+---
+
+<nav class="flex items-center justify-between py-4">
+  <Link
+    href="/"
+    class="text-foreground font-serif text-lg font-bold tracking-tight no-underline md:text-xl lg:text-2xl"
+    >Why Not Astro?</Link
+  >
+  <ul class="flex gap-x-2 text-sm md:gap-x-4 md:text-base">
+    <li><Link href="/">Home</Link></li>
+    <li><Link href="/blog">Blog</Link></li>
+    <li><Link href="/contact">Contact</Link></li>
+  </ul>
+</nav>

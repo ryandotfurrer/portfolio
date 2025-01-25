@@ -1,0 +1,16 @@
+---
+import Link from './Link.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-border mt-24 border-t py-8">
+  <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+    <p class="text-sm">
+      © {year} Why Not Astro? All rights reserved.
+    </p>
+    <p class="text-sm">
+      by <Link href="https://ryanfurrer.com/" externalLink={true}>Ryan Furrer</Link>
+    </p>
+  </div>
+</footer>

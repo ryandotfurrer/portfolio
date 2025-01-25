@@ -1,0 +1,24 @@
+---
+interface Props {
+  href: string;
+  externalLink?: boolean;
+  class?: string;
+}
+
+const { href, externalLink = false, class: className } = Astro.props;
+---
+
+<a
+  href={href}
+  class={`underline underline-offset-4 hover:text-foreground ${className || ''}`}
+  {...externalLink && { target: '_blank', rel: 'noopener noreferrer' }}
+>
+  <slot />
+</a>
+
+<style>
+  :where(nav > ul > li > a),
+  :where(footer > * a) {
+    @apply hover:text-foreground no-underline;
+  }
+</style>
