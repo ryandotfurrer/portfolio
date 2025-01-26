@@ -1,22 +1,47 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Button from '../components/Button.astro';
+
+const pageTitle = 'Astro Basics';
+const pageDescription = 'This is a test';
 ---
 
-<BaseLayout>
-  <h1 class="font-serif">Hello World</h1>
-  <p class="font-sans">This is a test</p>
-  <div
-    class="bg-card text-card-foreground outline-outline space-y-4 rounded-lg p-4 outline"
-  >
-    <p class="font-mono">This is a test</p>
-    <Button variant="default">Default Button</Button>
-    <Button variant="outline">Outline Button</Button>
-    <Button variant="destructive">Destructive Button</Button>
-    <Button variant="warning">Warning Button</Button>
-    <Button variant="success">Success Button</Button>
-    <Button variant="secondary">Secondary Button</Button>
-    <Button variant="ghost">Ghost Button</Button>
-    <Button variant="link">Link Button</Button>
-  </div>
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
+  <main class="py-12">
+    <div class="flex flex-col gap-8">
+      <section class="border-border bg-card rounded-lg border p-6">
+        <div class="flex flex-col gap-4">
+          <h2 class="text-2xl">Card Section</h2>
+          <p>
+            This is a sample card section with some placeholder text to
+            demonstrate the layout and styling.
+          </p>
+        </div>
+      </section>
+
+      <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          Array.from({ length: 3 }).map((_, i) => (
+            <div class="border-border bg-card rounded-lg border p-6">
+              <div class="flex flex-col gap-2">
+                <h3 class="text-xl">Card {i + 1}</h3>
+                <p class="text-card-foreground">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore.
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </section>
+
+      <section
+        class="border-border bg-secondary flex items-center justify-between rounded-lg border p-6"
+      >
+        <p class="text-lg">A highlighted section with different background</p>
+        <button class="bg-primary text-primary-foreground rounded-md px-4 py-2"
+          >Action</button
+        >
+      </section>
+    </div>
+  </main>
 </BaseLayout>

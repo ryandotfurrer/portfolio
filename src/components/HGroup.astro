@@ -1,0 +1,19 @@
+---
+import Heading from './Heading.astro';
+
+interface Props {
+  pageTitle: string;
+  pageDescription?: string;
+}
+
+const { pageTitle, pageDescription } = Astro.props;
+---
+
+<div class="py-24">
+  <Heading level="h2" size="3xl">
+    {pageTitle}
+  </Heading>
+  <p class="font-sans text-xl text-balance">
+    {pageDescription}
+  </p>
+</div>
