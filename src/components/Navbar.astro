@@ -1,23 +1,27 @@
 ---
 import Link from './Link.astro';
-
+import MobileMenuButton from './vue/MobileMenuButton.vue';
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'Work', href: '/work' },
   { label: 'Writing', href: '/writing' },
   { label: 'Speaking', href: '/speaking' },
   { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
+  // { label: 'Learn About Ryan', href: '/about/learn-about-ryan' },
+  // { label: 'Now', href: '/about/now' },
+  // { label: 'Uses', href: '/about/uses' },
 ];
 ---
 
-<nav class="flex items-center justify-between py-4">
+<nav
+  class="outline-outline relative container flex items-center justify-between rounded-lg bg-zinc-50 p-4 outline"
+>
   <Link
-    href="/"
-    class="text-foreground font-serif text-lg font-bold tracking-tight no-underline md:text-xl lg:text-2xl"
-    >Why Not Astro?</Link
+    href="/s"
+    class="text-foreground font-serif text-xl font-semibold tracking-tight no-underline md:text-2xl lg:text-3xl"
+    >{`<RF />`}</Link
   >
-  <ul class="flex gap-x-2 text-sm md:gap-x-4">
+  <ul class="hidden items-center gap-x-2 text-sm md:flex md:gap-x-4">
     {
       navItems.map(item => (
         <li>
@@ -27,5 +31,29 @@ const navItems = [
         </li>
       ))
     }
+  </ul>
+
+  <span class="hidden md:block">
+    <Link variant="primary" href="/contact" size="sm"> Contact </Link>
+  </span>
+  <div class="md:hidden">
+    <MobileMenuButton client:load />
+  </div>
+  <ul
+    id="mobile-menu"
+    class="outline-outline absolute top-full right-0 z-50 -mt-4 mr-4 flex w-50 flex-col gap-y-2 overflow-hidden rounded-lg bg-zinc-50 p-4 text-right shadow-lg outline md:hidden"
+  >
+    {
+      navItems.map(item => (
+        <li>
+          <Link href={item.href} class="no-underline hover:underline">
+            {item.label.toLowerCase()}
+          </Link>
+        </li>
+      ))
+    }
+
+    <Link variant="primary" href="/contact" size="sm" class="w-fit self-end lowercase">Contact</Link
+    >
   </ul>
 </nav>

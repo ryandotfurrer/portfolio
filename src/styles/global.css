@@ -22,7 +22,7 @@
   font-family: 'Geist Mono';
   font-style: normal;
   font-weight: 500 700;
-  src: url('/fonts/GeistMono.ttf') format('ttf');
+  src: url('/fonts/Geist Mono.ttf') format('ttf');
 }
 
 @theme {
@@ -58,6 +58,7 @@
   --color-success-foreground: oklch(var(--success-foreground));
 
   --color-border: oklch(var(--border));
+  --color-outline: oklch(var(--outline));
   --color-input: oklch(var(--input));
   --color-ring: oklch(var(--ring));
 
@@ -68,7 +69,7 @@
 
 @layer base {
   :root {
-    --background: 0.99 0 0; /* zinc-50 */
+    --background: 0.97 0 286; /* zinc-50 */
     --foreground: 0.21 0.01 286; /* zinc-900 */
 
     --primary: 0.21 0.01 286; /* zinc-900 */
@@ -100,6 +101,7 @@
     --success-foreground: 0.21 0.01 286; /* zinc-900 */
 
     --border: 0.87 0.01 286; /* zinc-300 */
+    --outline: 0.87 0.01 286; /* zinc-300 */
     --input: 0.87 0.01 286; /* zinc-300 */
     --ring: 0.71 0.01 286; /* zinc-400 */
 
@@ -122,4 +124,21 @@
   :not(nav) > ol {
     @apply list-decimal;
   }
+}
+
+/* Mobile Menu Animation Styles */
+#mobile-menu {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    max-height 0.3s ease-out,
+    opacity 0.2s ease-out,
+    visibility 0.2s ease-out;
+}
+
+#mobile-menu.menu-open {
+  max-height: 300px;
+  opacity: 1;
+  visibility: visible;
 }

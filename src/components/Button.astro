@@ -1,21 +1,30 @@
 ---
-import clsx from 'clsx';
+import { cn } from '../utils/utils';
 
 interface Props {
+  class?: string;
+  id?: string;
+  onclick?: string;
+  size?: 'default' | 'sm' | 'lg' | 'icon';
   variant?:
     | 'default'
     | 'destructive'
-    | 'warning'
-    | 'success'
+    | 'ghost'
+    | 'link'
     | 'outline'
     | 'secondary'
-    | 'ghost'
-    | 'link';
-  size?: 'default' | 'sm' | 'lg' | 'icon';
-  class?: string;
+    | 'success'
+    | 'warning';
 }
 
-const { variant = 'default', size = 'default', class: className, ...props } = Astro.props;
+const {
+  variant = 'default',
+  size = 'default',
+  class: className,
+  id,
+  onclick,
+  ...props
+} = Astro.props;
 
 const buttonVariants = {
   base: 'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 rounded-lg cursor-pointer',
@@ -28,7 +37,7 @@ const buttonVariants = {
       'border shadow-sm border-border bg-background hover:bg-secondary hover:text-foreground',
     secondary: 'bg-secondary shadow-sm text-secondary-foreground hover:bg-secondary/90',
     ghost: 'hover:bg-accent text-foreground',
-    link: 'text-primary underline-offset-4 hover:underline',
+    link: 'text-muted-foreground underline underline-offset-4 hover:text-foreground',
   },
   size: {
     default: 'h-9 px-4 py-2',
@@ -40,7 +49,9 @@ const buttonVariants = {
 ---
 
 <button
-  class={clsx(
+  id={id}
+  onclick={onclick}
+  class={cn(
     buttonVariants.base,
     buttonVariants.variant[variant],
     buttonVariants.size[size],
