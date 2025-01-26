@@ -1,0 +1,15 @@
+---
+import Navigation from './preact/Navigation';
+
+const links = [
+  { href: '/', text: 'Home' },
+  { href: '/work', text: 'Work' },
+  { href: '/writing', text: 'Writing' },
+  { href: '/speaking', text: 'Speaking' },
+  { href: '/contact', text: 'Contact' },
+];
+---
+
+<div class="container">
+  <Navigation client:load links={links} />
+</div>

@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import HGroup from '../components/HGroup.astro';
+import Nav from '../components/Nav.astro';
+import Navigation from '../components/preact/Navigation.tsx';
 
 interface Props {
   pageTitle: string;
@@ -20,9 +22,14 @@ const { pageTitle, pageDescription } = Astro.props;
     <title>Astro Basics</title>
   </head>
   <body>
-    <div class="container mx-auto max-w-screen-2xl px-4 py-8">
-      <HGroup pageTitle={pageTitle} pageDescription={pageDescription} />
-      <slot />
-    </div>
+    <header>
+      <Nav />
+    </header>
+    <main>
+      <div class="container mx-auto max-w-screen-xl px-4 py-8">
+        <HGroup pageTitle={pageTitle} pageDescription={pageDescription} />
+        <slot />
+      </div>
+    </main>
   </body>
 </html>
