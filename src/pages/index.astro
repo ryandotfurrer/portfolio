@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
 ---
 
 <BaseLayout>
@@ -9,11 +10,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     class="bg-card text-card-foreground outline-outline space-y-4 rounded-lg p-4 outline"
   >
     <p class="font-mono">This is a test</p>
-    <div class="outline-outline w-50 rounded-md p-4 outline">
-      <p class="font-mono">This is a test</p>
-      <div class="outline-outline w-25 rounded-sm p-4 outline">
-        <p class="font-mono">This is a test</p>
-      </div>
-    </div>
+    <Button variant="default">Default Button</Button>
+    <Button variant="outline">Outline Button</Button>
+    <Button variant="destructive">Destructive Button</Button>
+    <Button variant="warning">Warning Button</Button>
+    <Button variant="success">Success Button</Button>
+    <Button variant="secondary">Secondary Button</Button>
+    <Button variant="ghost">Ghost Button</Button>
+    <Button variant="link">Link Button</Button>
   </div>
 </BaseLayout>

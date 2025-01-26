@@ -39,10 +39,10 @@
   --color-popover-foreground: var(--color-foreground-muted);
 
   --color-primary: var(--color-zinc-800);
-  --color-primary-foreground: var(--color-foreground-muted);
+  --color-primary-foreground: var(--color-zinc-50);
 
-  --color-secondary: var(--color-zinc-800);
-  --color-secondary-foreground: var(--color-foreground-muted);
+  --color-secondary: var(--color-zinc-200);
+  --color-secondary-foreground: var(--color-foreground);
 
   --color-accent: var(--color-orange-500);
   --color-accent-foreground: var(--color-foreground);
@@ -59,7 +59,7 @@
   --color-border: var(--color-muted);
   --color-outline: var(--color-border);
   --color-input: var(--color-border);
-  --color-ring: var(--color-zinc-400);
+  --color-ring: var(--color-accent);
 
   --color-radius: 0.5rem;
   --color-rounded-lg: var(--color-radius);
