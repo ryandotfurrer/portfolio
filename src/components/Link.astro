@@ -12,6 +12,7 @@ const { href, externalLink = false, class: className } = Astro.props;
 <a
   href={href}
   class={cn('underline text-muted-foreground hover:text-foreground underline-offset-4', className)}
-  {...externalLink && { target: "_blank", rel: "noopener noreferrer" }}>
+  {...externalLink && { target: '_blank', rel: 'noopener noreferrer' }}
+>
   <slot />
 </a>
