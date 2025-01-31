@@ -50,10 +50,6 @@ const {
 } = Astro.props;
 ---
 
-<button
-  class={cn(buttonVariants({ variant, size, className }))}
-  onclick={onClick}
-  {...props}
->
+<button class={cn(buttonVariants({ variant, size, className }))} {...props}>
   <slot />
 </button>
