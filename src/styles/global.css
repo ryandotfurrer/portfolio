@@ -82,6 +82,6 @@
   h4,
   h5,
   h6 {
-    @apply text-foreground font-serif leading-none font-semibold tracking-tight text-balance;
+    @apply text-foreground font-serif font-bold tracking-tight text-balance;
   }
 }

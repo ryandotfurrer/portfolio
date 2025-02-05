@@ -1,19 +1,34 @@
 ---
 import Heading from './Heading.astro';
+import Link from './Link.astro';
 
 interface Props {
   pageTitle: string;
   pageDescription?: string;
+  hasCTA?: boolean;
 }
 
-const { pageTitle, pageDescription } = Astro.props;
+const { pageTitle, pageDescription, hasCTA = false } = Astro.props;
 ---
 
-<div class="py-24">
+<div class="py-64">
   <Heading level="h2" size="3xl">
     {pageTitle}
   </Heading>
   <p class="font-sans text-xl text-balance">
     {pageDescription}
   </p>
+  {
+    hasCTA && (
+      <div class="mt-6 flex gap-4">
+        <Link href="/contact" variant="primary" size="button">
+          Contact Me
+        </Link>
+
+        <Link href="/work" variant="secondary" size="button">
+          View work
+        </Link>
+      </div>
+    )
+  }
 </div>

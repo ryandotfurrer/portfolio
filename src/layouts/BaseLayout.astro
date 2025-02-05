@@ -6,9 +6,10 @@ import Nav from '../components/Nav.astro';
 interface Props {
   pageTitle: string;
   pageDescription?: string;
+  hasCTA?: boolean;
 }
 
-const { pageTitle, pageDescription } = Astro.props;
+const { pageTitle, pageDescription, hasCTA = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -26,7 +27,11 @@ const { pageTitle, pageDescription } = Astro.props;
         <Nav />
       </header>
       <main>
-        <HGroup pageTitle={pageTitle} pageDescription={pageDescription} />
+        <HGroup
+          pageTitle={pageTitle}
+          pageDescription={pageDescription}
+          hasCTA={hasCTA}
+        />
         <slot />
       </main>
     </div>

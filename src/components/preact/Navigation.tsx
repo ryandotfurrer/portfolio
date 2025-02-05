@@ -8,10 +8,10 @@ export default function Navigation({ links }: NavProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav class="items-between relative flex justify-between">
+    <nav class="items-between bg-card outline-outline relative flex justify-between rounded-lg p-6 outline">
       <a
         href="/"
-        className="text-foreground font-serif text-2xl font-semibold"
+        className="text-foreground font-serif text-2xl font-bold"
       >{`<RF />`}</a>
       {/* Menu Button */}
       <button
@@ -30,11 +30,11 @@ export default function Navigation({ links }: NavProps) {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        class={`border-border bg-background absolute top-full right-0 left-0 border-b text-right transition-all ease-in-out md:hidden ${
+        class={`border-border bg-card outline-outline absolute top-[85%] right-6 w-1/2 rounded-lg border-b p-6 text-right shadow-md outline transition-all ease-in-out md:hidden ${
           isOpen ? 'visible opacity-100' : 'invisible opacity-0'
         }`}
       >
-        <div class="space-y-4 py-8">
+        <div class="space-y-4">
           {links.map((link) => (
             <a key={link.href} href={link.href} class="block">
               {link.text.toLowerCase()}
@@ -42,7 +42,7 @@ export default function Navigation({ links }: NavProps) {
           ))}
           <a
             href="/contact"
-            class="ring-offset-background focus-visible:ring-ring bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-10 cursor-pointer items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold whitespace-nowrap transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
+            class="ring-offset-background focus-visible:ring-ring bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-10 cursor-pointer items-center justify-center gap-2 rounded-md px-4 py-2 whitespace-nowrap transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
           >
             contact
           </a>
@@ -50,12 +50,12 @@ export default function Navigation({ links }: NavProps) {
       </div>
 
       {/* Desktop Menu */}
-      <div class="hidden text-sm md:flex md:items-center md:space-x-4">
+      <div class="hidden md:flex md:items-center md:space-x-4">
         {links.map((link) => (
           <a
             key={link.href}
             href={link.href}
-            class="hover:text-primary text-sm transition-colors"
+            class="hover:text-primary transition-colors"
           >
             {link.text.toLowerCase()}
           </a>
@@ -63,7 +63,7 @@ export default function Navigation({ links }: NavProps) {
       </div>
       <a
         href="/contact"
-        class="ring-offset-background focus-visible:ring-ring bg-primary text-primary-foreground hover:bg-primary/90 md:self-en hidden h-9 cursor-pointer items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-semibold whitespace-nowrap transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 md:inline-flex [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
+        class="ring-offset-background focus-visible:ring-ring bg-primary text-primary-foreground hover:bg-primary/90 hidden h-9 cursor-pointer items-center justify-center gap-2 rounded-md px-3 py-2 whitespace-nowrap transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 md:inline-flex [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
       >
         contact
       </a>
